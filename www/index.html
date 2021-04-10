@@ -39,51 +39,77 @@
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    
 
     <title>Hello World</title>
+    <style>
+        .app {
+            background: linear-gradient(#00caf2, #dddddd);
+        }
+        .mainForm {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            border: #4d4d4d 1px solid;
+        }
+        .common-label {
+            width: 100%;
+            text-align: center;
+            text-transform: capitalize;
+            font-weight: bold;
+        }
+        .common-label h1 {
+            box-shadow: 1px 1px 1px black;
+        }
+    </style>
 </head>
 
 <body>
     <div class="app">
-        <h1>PhoneGap</h1>
-        <div id="deviceready" class="blink">
+        <div class="mainForm">
+            <div class="common-label">
+                <h1>i-Explore</h1>
+            </div>
+            <div class="form-group">
+                <label for="activityName" class="common-label">Activity name</label>
+                <input type="email" class="form-control" id="activityName" aria-describedby="activityName" placeholder="Please enter activity name">
+            </div>
 
-<!--            FORM -->
-            <form>
-                <div class="form-group">
-                    <label for="activityName">Activity name</label>
-                    <input type="email" class="form-control" id="activityName" aria-describedby="activityName" placeholder="Please enter activity name">
-                </div>
+            <div class="form-group">
+                <label for="location" class="common-label">Location</label>
+                <input type="text" class="form-control" id="location" aria-describedby="location" placeholder="Please enter location">
+            </div>
 
-                <div class="form-group">
-                    <label for="location">Location</label>
-                    <input type="text" class="form-control" id="location" aria-describedby="location" placeholder="Please enter location">
-                </div>
+            <div class="form-group">
+                <label for="date" class="common-label">Date</label>
+                <input type="date" class="form-control" id="date" aria-describedby="date" placeholder="Please enter date">
+            </div>
 
-                <div class="form-group">
-                    <label for="date">Date</label>
-                    <input type="date" class="form-control" id="date" aria-describedby="date" placeholder="Please enter date">
-                </div>
+            <div class="form-group">
+                <label for="timeAttending" class="common-label">Time of attending</label>
+                <input type="time" class="form-control" id="timeAttending" aria-describedby="timeAttending" placeholder="Please enter time of attending">
+            </div>
 
-                <div class="form-group">
-                    <label for="timeAttending">Time of attending</label>
-                    <input type="time" class="form-control" id="timeAttending" aria-describedby="timeAttending" placeholder="Please enter time of attending">
-                </div>
-
-                <div class="form-group">
-                    <label for="reporterName">Name of reporter</label>
-                    <input type="text" class="form-control" id="reporterName" aria-describedby="reporterName" placeholder="Please enter reporter name">
-                </div>
-                <button type="submit" class="btn btn-primary">Save</button>
-            </form>
-            
-            
+            <div class="form-group">
+                <label for="reporterName" class="common-label">Name of reporter</label>
+                <input type="text" class="form-control" id="reporterName" aria-describedby="reporterName" placeholder="Please enter reporter name">
+            </div>
+            <div class="common-label" style="margin-top: 5px">
+                <button type="submit" class="btn btn-primary" onclick="saveData()">Save</button>
+            </div>
         </div>
     </div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript">
         app.initialize();
+        // A $( document ).ready() block.
     </script>
 </body>
 
